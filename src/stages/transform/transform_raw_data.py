@@ -1,12 +1,19 @@
 from typing import List, Dict
 
+from src.errors.transform_error import TransformError
 from src.stages.contracts.extract_contract import ExtractContract
+from src.stages.contracts.transform_contract import TransformContract
 
 
 class TransformRawData:
 
-    def transform(self, extract_contract: ExtractContract):
-        return self.__filter_and_transform_data(extract_contract)
+    def transform(self, extract_contract: ExtractContract) -> TransformContract:
+        try:
+            return TransformContract(
+                load_content=self.__filter_and_transform_data(extract_contract)
+            )
+        except Exception as exception:
+            raise TransformError(str(exception)) from exception
 
     def __filter_and_transform_data(
         self, extract_contract: ExtractContract
