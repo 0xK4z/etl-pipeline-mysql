@@ -49,8 +49,8 @@ class TransformRawData:
                 "first_name": names[1],
                 "last_name": names[0],
                 "surname": None,
-                "link": link,
                 "artist_id": link_splited[1],
+                "link": link,
             }
 
         if len(names) == 3:
@@ -58,14 +58,14 @@ class TransformRawData:
                 "first_name": names[2],
                 "last_name": names[0],
                 "surname": names[1],
-                "link": link,
                 "artist_id": link_splited[1],
+                "link": link,
             }
 
         return {
             "first_name": names[0],
             "last_name": None,
             "surname": None,
-            "link": link,
             "artist_id": link_splited[1],
+            "link": link,
         }
