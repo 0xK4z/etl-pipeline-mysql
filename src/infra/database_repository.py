@@ -1,11 +1,12 @@
 from typing import Dict
 from src.infra.database_connector import DatabaseConnector
+from src.infra.interfaces.database_repository import DatabaseRepositoryInterface
 
 
-class DatabaseRepository:
+class DatabaseRepository(DatabaseRepositoryInterface):
 
     @classmethod
-    def insert_artist(cls, data: Dict) -> int:
+    def insert_artist(cls, data: Dict) -> int: # pylint: disable=arguments-differ
         connection = DatabaseConnector.connect()
         cursor = connection.cursor()
         insert_query = """
