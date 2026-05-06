@@ -2,6 +2,8 @@
 #    uv pip compile pyproject.toml --no-deps --output-file requirements.txt
 beautifulsoup4==4.14.3
     # via etl (pyproject.toml)
+mysql-connector-python==9.7.0
+    # via etl (pyproject.toml)
 pre-commit==4.5.1
     # via etl (pyproject.toml)
 pylint==4.0.5
