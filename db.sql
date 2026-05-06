@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS pipeline_db;
 
-CREATE TABLE IF NOT EXISTS 'pipeline_db'.'artists' (
+CREATE TABLE IF NOT EXISTS `pipeline_db`.`artists` (
     id BIGINT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
