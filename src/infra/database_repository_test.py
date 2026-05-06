@@ -8,5 +8,5 @@ from src.stages.transform.mocks.mock_transform_raw_data import mock_transform_ra
 def test_insert_artist():
     database_repository = DatabaseRepository()
     transformed_data = mock_transform_raw_data()
-    artist_id = database_repository.insert_artist(transformed_data)
+    artist_id = database_repository.insert_artist(transformed_data.load_content[0])
     assert isinstance(artist_id, int)
