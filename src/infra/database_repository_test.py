@@ -7,3 +7,4 @@ def test_insert_artist():
     transformed_data = mock_transform_raw_data()
     artist_id = database_repository.insert_artist(transformed_data.load_content[0])
     assert isinstance(artist_id, int)
+    database_repository.insert_artist_attributes.clear()
